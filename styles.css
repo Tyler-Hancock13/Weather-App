@@ -1,0 +1,116 @@
+/* .searchBox {
+
+    border: 2px solid black;
+    width: 18em;
+}
+
+body{
+    background: #004372;
+  background: -moz-linear-gradient(top,  #004372 0%, #011d34 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#004372), color-stop(100%,#011d34));
+  background: -webkit-linear-gradient(top,  #004372 0%,#011d34 100%);
+  background: -o-linear-gradient(top,  #004372 0%,#011d34 100%);
+  background: -ms-linear-gradient(top,  #004372 0%,#011d34 100%);
+  background: linear-gradient(to bottom,  #004372 0%,#011d34 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#004372', endColorstr='#011d34',GradientType=0 );
+  
+  } */
+
+body {
+    background-image: url("pexels-pixabay-531756.jpg");
+    display: flex;
+    flex-direction: column;
+}
+
+#title {
+    width:15%;
+    border:2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left:5em;
+}
+
+#main {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    margin-top:10em;
+
+}
+
+.searchBox {
+    white-space: nowrap;
+}
+
+h3 {
+    margin-left: 1.5em;
+}
+
+#submitLocation {
+    background-color: #857C8D;
+}
+
+#location {
+    width:1300px;
+    height:4em;
+    border:1px solid black;
+    border-radius: 5em;
+    text-align: center;
+    font-size: large;
+}
+
+.card-container {
+    height: 420px;
+    width: 800px;
+    background-color: #FFF;
+    border-radius: 35px;
+    margin-top: 35px;
+    margin-left: 32%;
+}
+
+.top-row {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-top: 18px;
+}
+
+.middle-row {
+    margin-top: 4em;
+    display: flex;
+}
+
+#cityTemperature {
+    margin-left: 40%;
+    font-size: 6em;
+}
+
+#cityName {
+    margin-left: 5%;
+}
+
+#cityWeather {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: green;
+}
+
+#tempFeels {
+    font-size:2em;
+    margin-left:14.2em;
+}
+
+.bottom-row {
+    display:flex;
+}
+
+.icon {
+    width: 25px;
+    height: 25px;
+}
+
+.col {
+    margin-left: 5%;
+}
