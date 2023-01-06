@@ -13,9 +13,15 @@ let getWeatherForLocation = async () => {
     let data = await request.json();
     console.log(data);
 
+    // ---------------------- CALCULATE SUNRISE TIME ----------------
     var sunriseTime = new Date(data.sys.sunrise*1000);
     sunriseTime = subtractHours(sunriseTime, 1);
     console.log(sunriseTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true }))
+
+    // ---------------------- CALCULATE SUNSET TIME ------------------
+
+    var sunsetTime = new Date(data.sys.sunset * 1000);
+    sunsetTime = subtractHours(sunsetTime, 1);
 
     // ---------------------- CALCULATE LOCAL TIME ZONE ----------
     console.log(data.timezone);
@@ -58,6 +64,7 @@ let getWeatherForLocation = async () => {
     document.getElementById('humidity').innerHTML = `${humidity.toString()}%`;
     document.getElementById('pressure').innerHTML = `${pressure.toString()} mb`;
     document.getElementById('sunrise').innerHTML = `${sunriseTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;
+    document.getElementById('sunset').innerHTML = `${sunsetTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;
 };
 
 function setImageIcon(icon){
