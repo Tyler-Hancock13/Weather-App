@@ -15,7 +15,7 @@
   </head>
   <body>
       <div>
-          <div id="title" class="bg-primary">
+          <div id="title">
             <h1>Forecaster</h1>
           </div>
       </div>
@@ -24,9 +24,10 @@
 
       <div id="main">
         <div class="searchBox">
-          <h3>Enter a location to retrieve latest forecast</h3>
-          <input type="text" id="location" name="location" placeholder="Search by location">
-          <input class="btn-primary" type="submit" name="submit" id="submitLocation">
+          <form>
+            <input type="text" id="location" name="location" placeholder="Enter a location to retrieve latest forecast">
+            <input class="btn-primary" type="submit" name="submit" id="submitLocation">
+          </form>
         </div>
       </div>
 
@@ -49,7 +50,7 @@
             <img class="icon" src="gauge.png"/>
             <h6 id="pressure"></h6>
           </div>
-          <div class="col">
+          <div class="col2">
             <img class="icon" src="sunrise.png"/>
             <h6 id="sunrise"></h6>
             <img class="icon" src="sunset.png" />
