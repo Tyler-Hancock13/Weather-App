@@ -48,19 +48,6 @@ h3 {
     margin-left: 1.5em;
 }
 
-#submitLocation {
-    background-color: #857C8D;
-}
-
-#location {
-    width:1300px;
-    height:4em;
-    border:1px solid black;
-    border-radius: 5em;
-    text-align: center;
-    font-size: large;
-}
-
 .card-container {
     height: 420px;
     width: 800px;
@@ -125,9 +112,44 @@ h3 {
 
 
 
-.flexContainer {
-    width: 50%;
+form {
     display: flex;
-    margin-left: 24%;
-    border-radius: 2em;
+    border: 2px solid #000;
+    border-radius: 5px;
+}
+
+input[type="search"] {
+    border: none;
+    background: #fff;
+    margin: 0;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border: 1px solid transparent;
+    border-radius: 5px 0 0 5px;
+    width:1300px;
+    height: 75px;
+    font-size: 1.5em;
+}
+
+input[type="search"]::placeholder {
+    color: #000;
+}
+
+button[type="submit"] {
+    text-indent: auto;
+    overflow: hidden;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    border: 1px solid transparent;
+    border-radius: 0 5px 5px 0;
+    background: url("search.png");
+    cursor: pointer;
+    background-color: #FFF;
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+  outline: none;
 }

@@ -1,6 +1,6 @@
-/* window.onload = function() {
+window.onload = function() {
     document.getElementById("forecast").style.display = 'none';
-} */
+}
 
 let getWeatherForLocation = async () => {
 
