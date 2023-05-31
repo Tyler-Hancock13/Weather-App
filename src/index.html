@@ -5,19 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../dist/output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap" rel="stylesheet">
     <script src="weatherNEW.js" defer></script>
     <title>Weather Dashboard</title>
 </head>
 <body class="w-full min-h-screen flex">
-    <div class="bg-anti-flash-white w-full h-full">
+    <div class="bg-back-theme font-inter w-full h-full">
         <div class="bg-aero w-full h-20 flex justify-center items-center">
             <h1 class="text-4xl text-white">Weather Dashboard</h1>
         </div>
 
         <div class="flex flex-wrap w-full min-h-11/12">
-            <div class="w-1/6 h-5/6 bg-gray-200 rounded-md border-2 border-gray-200 ml-96 mt-24">
+            <div class="w-1/6 h-5/6 bg-card-theme rounded-md ml-96 mt-24">
                 <input type="search" placeholder="Enter City" class="w-72 h-10 ml-2 mt-4 border-2 border-black rounded-md placeholder:pl-2 placeholder:italic"/>
-                <button class="ml-2 mt-1 w-72 h-9 rounded-md text-white font-semibold bg-aero hover:bg-indigo-blue">Search</button>
+                <button class="ml-2 mt-1 w-72 h-9 rounded-md text-white font-semibold bg-aero hover:bg-active-theme duration-500">Search</button>
             </div>
     
             <div class="flex-column">
@@ -25,7 +28,7 @@
 
                     <div class="flex h-52 w-full">
 
-                            <div class="flex-col bg-mint-green rounded-md w-64 h-52 ml-2 mt-4">
+                            <div class="flex-col bg-card-theme rounded-md w-64 h-52 ml-2 mt-4">
                                 <div class="flex">
                                     <h1 class="text-5xl ml-2 mt-1 tracking-tighter">1&deg;C</h1>
                                     <h3 class="w-10 text-sm leading-none ml-24 mt-3">Feels Like</h3><h3 class="text-2xl tracking-tighter mt-2">5&deg;C</h3>
@@ -38,7 +41,7 @@
     
                         <div class="flex w-7/12 h-52 ml-6 mt-4">
                             <div class="flex-col">
-                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16">
+                                <div class="flex justify-between bg-card-theme rounded-sm w-44 h-16">
                                     <div>
                                         <img class="w-8 ml-8 mt-4" src="../humidity.png"/>
                                     </div>
@@ -48,7 +51,7 @@
                                     </div>
                                 </div>
     
-                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16 mt-2">
+                                <div class="flex justify-between bg-card-theme rounded-sm w-44 h-16 mt-2">
                                     <div>
                                         <img class="w-7 ml-8 mt-4" src="../wind.png"/>
                                     </div>
@@ -58,7 +61,7 @@
                                     </div>
                                 </div>
     
-                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16 mt-2">
+                                <div class="flex justify-between bg-card-theme rounded-sm w-44 h-16 mt-2">
                                     <div>
                                         <img class="w-8 ml-8 mt-4" src="../gauge.png"/>
                                     </div>
@@ -69,17 +72,17 @@
                                 </div>
                             </div>
                             <div class="flex-col ml-2">
-                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16">
+                                <div class="flex justify-between bg-card-theme rounded-sm w-44 h-16">
                                     <div>
 
                                     </div>
                                     <div class="flex-col justify-items-center text-sm mr-7 mt-2">
                                         <h3>Visibility</h3>
-                                        <h3>1200ft</h3>
+                                        <h3 class="ml-1 text-header-theme">1200ft</h3>
                                     </div>
                                 </div>
 
-                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16 mt-2">
+                                <div class="flex justify-between bg-card-theme rounded-sm w-44 h-16 mt-2">
                                     <div>
                                         <img class="w-8 ml-8 mt-3" src="../sunrise.png"/>
                                     </div>
@@ -89,7 +92,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16 mt-2">
+                                <div class="flex justify-between bg-card-theme rounded-sm w-44 h-16 mt-2">
                                     <div>
                                         <img class="w-8 ml-8 mt-3" src="../sunset.png"/>
                                     </div>
@@ -131,41 +134,41 @@
                     </div>
                 </div> -->
                 <h3 class="mt-4 ml-2 font-semibold text-3xl">5 Day Forecast</h3>
-                <div class="bg-anti-flash-white flex rounded-md w-full h-56 mb-80 ml-2 mt-2">
-                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm">
-                        <h3 class="ml-11 mt-4 font-semibold">Monday</h3>
+                <div class="bg-back-theme flex rounded-md w-full h-56 mb-80 ml-2 mt-2">
+                    <div class="w-36 h-56 bg-card-theme flex-col justify-center items-center rounded-sm">
+                        <h3 class="ml-11 mt-4 font-semibold text-header-theme">Monday</h3>
                         <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
                         <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
                         <p class="ml-5">Wind: 23 km/h</p>
                         <p class="ml-5">Humidity: 50%</p>
                     </div>
 
-                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm ml-2">
-                        <h3 class="ml-11 mt-4 font-semibold">Tuesday</h3>
+                    <div class="w-36 h-56 bg-card-theme flex-col justify-center items-center rounded-sm ml-2">
+                        <h3 class="ml-11 mt-4 font-semibold text-header-theme">Tuesday</h3>
                         <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
                         <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
                         <p class="ml-5">Wind: 19 km/h</p>
                         <p class="ml-5">Humidity: 69%</p>
                     </div>
 
-                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm ml-2">
-                        <h3 class="ml-11 mt-4 font-semibold">Wednesday</h3>
+                    <div class="w-36 h-56 bg-card-theme flex-col justify-center items-center rounded-sm ml-2">
+                        <h3 class="ml-7 mt-4 font-semibold text-header-theme">Wednesday</h3>
                         <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
                         <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
                         <p class="ml-5">Wind: 40 km/h</p>
                         <p class="ml-5">Humidity: 78%</p>
                     </div>
 
-                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm ml-2">
-                        <h3 class="ml-11 mt-4 font-semibold">Thursday</h3>
+                    <div class="w-36 h-56 bg-card-theme flex-col justify-center items-center rounded-sm ml-2">
+                        <h3 class="ml-9 mt-4 font-semibold text-header-theme">Thursday</h3>
                         <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
                         <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
                         <p class="ml-5">Wind: 33 km/h</p>
                         <p class="ml-5">Humidity: 84%</p>
                     </div>
 
-                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm ml-2">
-                        <h3 class="ml-11 mt-4 font-semibold">Friday</h3>
+                    <div class="w-36 h-56 bg-card-theme flex-col justify-center items-center rounded-sm ml-2">
+                        <h3 class="ml-12 mt-4 font-semibold text-header-theme">Friday</h3>
                         <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
                         <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
                         <p class="ml-5">Wind: 60 km/h</p>
