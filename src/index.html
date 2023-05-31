@@ -17,7 +17,7 @@
             <h1 class="text-4xl text-white">Weather Dashboard</h1>
         </div>
 
-        <div class="flex flex-wrap w-full min-h-11/12">
+        <div class="flex flex-wrap w-full min-fit">
             <div class="w-1/6 h-5/6 bg-card-theme rounded-md ml-96 mt-24">
                 <input type="search" placeholder="Enter City" class="w-72 h-10 ml-2 mt-4 border-2 border-black rounded-md placeholder:pl-2 placeholder:italic"/>
                 <button class="ml-2 mt-1 w-72 h-9 rounded-md text-white font-semibold bg-aero hover:bg-active-theme duration-500">Search</button>
@@ -29,13 +29,15 @@
                     <div class="flex h-52 w-full">
 
                             <div class="flex-col bg-card-theme rounded-md w-64 h-52 ml-2 mt-4">
-                                <div class="flex">
-                                    <h1 class="text-5xl ml-2 mt-1 tracking-tighter">1&deg;C</h1>
-                                    <h3 class="w-10 text-sm leading-none ml-24 mt-3">Feels Like</h3><h3 class="text-2xl tracking-tighter mt-2">5&deg;C</h3>
+                                <div class="flex justify-between">
+                                    <h1 class="text-5xl ml-4 mt-4 tracking-tighter">1&deg;C</h1>
+                                    <h3 class="w-12 h-8 mt-5 mr-16 text-2xl font-medium">Clouds</h3>
                                 </div>
-                                <div class="flex mt-16">
-                                    <img class="ml-2" src="../images/weather/cloudy.png"/>
-                                    <h3 class="ml-14 mt-8 text-lg">Cloudy</h3>
+                                <div class="flex justify-between mt-20">
+                                    <div class="flex">
+                                        <h3 class="w-10 text-md text-header-theme font-medium leading-none ml-4 mt-4">Feels Like</h3><h3 class="text-xl tracking-tighter font-medium ml-1 mt-5">5&deg;C</h3>
+                                    </div>
+                                    <img class="mr-2 -mt-2" src="../images/weather/cloudy.png"/>
                                 </div>
                             </div>
     
@@ -45,9 +47,9 @@
                                     <div>
                                         <img class="w-8 ml-8 mt-4" src="../humidity.png"/>
                                     </div>
-                                    <div class="flex-col text-sm mr-7 mt-2">
-                                        <h3>Humidity</h3>
-                                        <h3 class="ml-4">50%</h3>
+                                    <div class="flex-col text-md mr-7 mt-2">
+                                        <h3 class="text-header-theme font-medium">Humidity</h3>
+                                        <h3 class="ml-4 font-semibold">50%</h3>
                                     </div>
                                 </div>
     
@@ -55,9 +57,9 @@
                                     <div>
                                         <img class="w-7 ml-8 mt-4" src="../wind.png"/>
                                     </div>
-                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
-                                        <h3>Wind</h3>
-                                        <h3 class="">26km/h</h3>
+                                    <div class="flex-col justify-items-center text-md mr-7 mt-2">
+                                        <h3 class="text-header-theme font-medium">Wind</h3>
+                                        <h3 class="font-semibold">26km/h</h3>
                                     </div>
                                 </div>
     
@@ -65,9 +67,9 @@
                                     <div>
                                         <img class="w-8 ml-8 mt-4" src="../gauge.png"/>
                                     </div>
-                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
-                                        <h3>Pressure</h3>
-                                        <h3>1050mb</h3>
+                                    <div class="flex-col justify-items-center text-md mr-7 mt-2">
+                                        <h3 class="text-header-theme font-medium">Pressure</h3>
+                                        <h3 class="font-semibold">1050mb</h3>
                                     </div>
                                 </div>
                             </div>
@@ -76,9 +78,9 @@
                                     <div>
 
                                     </div>
-                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
-                                        <h3>Visibility</h3>
-                                        <h3 class="ml-1 text-header-theme">1200ft</h3>
+                                    <div class="flex-col justify-items-center text-md mr-7 mt-2">
+                                        <h3 class="text-header-theme font-medium">Visibility</h3>
+                                        <h3 class="ml-1 font-semibold">1200ft</h3>
                                     </div>
                                 </div>
 
@@ -86,9 +88,9 @@
                                     <div>
                                         <img class="w-8 ml-8 mt-3" src="../sunrise.png"/>
                                     </div>
-                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
-                                        <h3>Sunrise</h3>
-                                        <h3>5:42am</h3>
+                                    <div class="flex-col justify-items-center text-md mr-7 mt-2">
+                                        <h3 class="text-header-theme font-medium">Sunrise</h3>
+                                        <h3 class="font-semibold">5:42am</h3>
                                     </div>
                                 </div>
 
@@ -96,9 +98,9 @@
                                     <div>
                                         <img class="w-8 ml-8 mt-3" src="../sunset.png"/>
                                     </div>
-                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
-                                        <h3>Sunset</h3>
-                                        <h3>8:26pm</h3>
+                                    <div class="flex-col justify-items-center text-md mr-7 mt-2">
+                                        <h3 class="text-header-theme font-medium">Sunset</h3>
+                                        <h3 class="font-semibold">8:26pm</h3>
                                     </div>
                                 </div>
                             </div>
@@ -133,7 +135,7 @@
     
                     </div>
                 </div> -->
-                <h3 class="mt-4 ml-2 font-semibold text-3xl">5 Day Forecast</h3>
+                <h3 class="mt-8 ml-2 font-semibold text-3xl">5 Day Forecast</h3>
                 <div class="bg-back-theme flex rounded-md w-full h-56 mb-80 ml-2 mt-2">
                     <div class="w-36 h-56 bg-card-theme flex-col justify-center items-center rounded-sm">
                         <h3 class="ml-11 mt-4 font-semibold text-header-theme">Monday</h3>
