@@ -52,7 +52,6 @@ let getWeatherForLocation = async () => {
     let windSpeed = setWindSpeed(data);
     let humidity = setHumidity(data);
     let pressure = setPressure(data);
-    let sunrise = calculateSunrise(data);
 
     let feelsLike = data.main.feels_like - 273.15;
     feelsLike = Math.round(feelsLike);

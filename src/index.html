@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/output.css">
+    <script src="weatherNEW.js" defer></script>
+    <title>Weather Dashboard</title>
+</head>
+<body class="w-full min-h-screen flex">
+    <div class="bg-anti-flash-white w-full h-full">
+        <div class="bg-aero w-full h-20 flex justify-center items-center">
+            <h1 class="text-4xl text-white">Weather Dashboard</h1>
+        </div>
+
+        <div class="flex flex-wrap w-full min-h-11/12">
+            <div class="w-1/6 h-5/6 bg-gray-200 rounded-md border-2 border-gray-200 ml-96 mt-24">
+                <input type="search" placeholder="Enter City" class="w-72 h-10 ml-2 mt-4 border-2 border-black rounded-md placeholder:pl-2 placeholder:italic"/>
+                <button class="ml-2 mt-1 w-72 h-9 rounded-md text-white font-semibold bg-aero hover:bg-indigo-blue">Search</button>
+            </div>
+    
+            <div class="flex-column">
+                    <h3 class="mt-24 ml-2 font-semibold text-3xl">Current weather for Toronto, CA</h3>
+
+                    <div class="flex h-52 w-full">
+
+                            <div class="flex-col bg-mint-green rounded-md w-64 h-52 ml-2 mt-4">
+                                <div class="flex">
+                                    <h1 class="text-5xl ml-2 mt-1 tracking-tighter">1&deg;C</h1>
+                                    <h3 class="w-10 text-sm leading-none ml-24 mt-3">Feels Like</h3><h3 class="text-2xl tracking-tighter mt-2">5&deg;C</h3>
+                                </div>
+                                <div class="flex mt-16">
+                                    <img class="ml-2" src="../images/weather/cloudy.png"/>
+                                    <h3 class="ml-14 mt-8 text-lg">Cloudy</h3>
+                                </div>
+                            </div>
+    
+                        <div class="flex w-7/12 h-52 ml-6 mt-4">
+                            <div class="flex-col">
+                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16">
+                                    <div>
+                                        <img class="w-8 ml-8 mt-4" src="../humidity.png"/>
+                                    </div>
+                                    <div class="flex-col text-sm mr-7 mt-2">
+                                        <h3>Humidity</h3>
+                                        <h3 class="ml-4">50%</h3>
+                                    </div>
+                                </div>
+    
+                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16 mt-2">
+                                    <div>
+                                        <img class="w-7 ml-8 mt-4" src="../wind.png"/>
+                                    </div>
+                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
+                                        <h3>Wind</h3>
+                                        <h3 class="">26km/h</h3>
+                                    </div>
+                                </div>
+    
+                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16 mt-2">
+                                    <div>
+                                        <img class="w-8 ml-8 mt-4" src="../gauge.png"/>
+                                    </div>
+                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
+                                        <h3>Pressure</h3>
+                                        <h3>1050mb</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex-col ml-2">
+                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16">
+                                    <div>
+
+                                    </div>
+                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
+                                        <h3>Visibility</h3>
+                                        <h3>1200ft</h3>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16 mt-2">
+                                    <div>
+                                        <img class="w-8 ml-8 mt-3" src="../sunrise.png"/>
+                                    </div>
+                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
+                                        <h3>Sunrise</h3>
+                                        <h3>5:42am</h3>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-between bg-mint-green rounded-sm w-44 h-16 mt-2">
+                                    <div>
+                                        <img class="w-8 ml-8 mt-3" src="../sunset.png"/>
+                                    </div>
+                                    <div class="flex-col justify-items-center text-sm mr-7 mt-2">
+                                        <h3>Sunset</h3>
+                                        <h3>8:26pm</h3>
+                                    </div>
+                                </div>
+                            </div>
+                            
+
+<!--                             <span class="text-xl"><b>Humidity: </b>50%</span> <span class="text-xl"><b>Wind: </b>25km/h</span> <br>
+                            <span class="text-xl"><b>Pressure: </b>1050mb</span> <span class="text-xl"><b>Visibility: </b>1200m</span><br>
+                            <span class="text-xl"><b>Sunrise: </b>5:42 am</span> <span class="text-xl"><b>Sunset: </b>8:22 pm</span> -->
+                        </div>
+                    </div>
+
+<!--                 <div class="bg-mint-green rounded-md w-auto h-1/3 ml-2 mt-24">
+                    <div class="flex ml-5">
+                        <img class="" id="weather-icon" src="../images/weather/cloudy.png"/>
+                        <h1 id="cityTemperature" class="text-6xl float-right pt-2 ml-56 tracking-tighter">1&deg;C</h1>
+                        <h2 class="text-indigo-blue text-3xl font-medium float-right ml-32  pt-2">Toronto, CA</h2> <br><br>
+                    </div>
+    
+                    <div class="flex text-xl mt-32 ml-5 text-indigo-blue">
+                        <div class="float-left">
+                            <span><b>Current conditions:</b></span> <span>Partly Cloudy</span> <br>
+                            <span class="ml-32"><b>Wind:</b></span> <span>25 km/h</span> <br>
+                            <span class="ml-24"><b>Humidity:</b></span> <span>50%</span> <br>
+                        </div>
+    
+                        
+                        <div class="float-right ml-60">
+                            <span><b>Pressure:</b></span> <span>1050 mb</span> <br>
+                            <span class="ml-2"><b>Sunrise:</b></span> <span>5:42 am</span> <br>
+                            <span class="ml-4"><b>Sunset:</b></span> <span>8:22 pm</span>
+                        </div>
+    
+                    </div>
+                </div> -->
+                <h3 class="mt-4 ml-2 font-semibold text-3xl">5 Day Forecast</h3>
+                <div class="bg-anti-flash-white flex rounded-md w-full h-56 mb-80 ml-2 mt-2">
+                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm">
+                        <h3 class="ml-11 mt-4 font-semibold">Monday</h3>
+                        <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
+                        <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
+                        <p class="ml-5">Wind: 23 km/h</p>
+                        <p class="ml-5">Humidity: 50%</p>
+                    </div>
+
+                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm ml-2">
+                        <h3 class="ml-11 mt-4 font-semibold">Tuesday</h3>
+                        <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
+                        <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
+                        <p class="ml-5">Wind: 19 km/h</p>
+                        <p class="ml-5">Humidity: 69%</p>
+                    </div>
+
+                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm ml-2">
+                        <h3 class="ml-11 mt-4 font-semibold">Wednesday</h3>
+                        <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
+                        <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
+                        <p class="ml-5">Wind: 40 km/h</p>
+                        <p class="ml-5">Humidity: 78%</p>
+                    </div>
+
+                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm ml-2">
+                        <h3 class="ml-11 mt-4 font-semibold">Thursday</h3>
+                        <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
+                        <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
+                        <p class="ml-5">Wind: 33 km/h</p>
+                        <p class="ml-5">Humidity: 84%</p>
+                    </div>
+
+                    <div class="w-36 h-56 bg-anti-flash-white flex-col justify-center items-center rounded-sm ml-2">
+                        <h3 class="ml-11 mt-4 font-semibold">Friday</h3>
+                        <img class="w-14 ml-11 mt-4" src="../images/weather/clear.png"/>
+                        <h3 class="ml-14 text-2xl mt-1">5&deg;C</h3>
+                        <p class="ml-5">Wind: 60 km/h</p>
+                        <p class="ml-5">Humidity: 50%</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <footer class="bg-aero w-full h-12 flex justify-center items-center sticky bottom-0 ">
+            <p class="text-white">Weather data provided by OpenWeather | Created by Tyler Hancock &copy; 2023</p>
+        </footer>
+
+    </div>
+</body>
+</html>
