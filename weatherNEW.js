@@ -19,7 +19,7 @@ let getWeatherForLocation = async (longitude, latitude) => {
     const request = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=c55b5e9d4864e69d994e516d95e4ffb3`)
 
     let data = await request.json();
-    console.log(data.current.feels_like);
+    console.log(data);
 
     let tempCelsius = data.current.temp - 273.15;
     tempCelsius = Math.round(tempCelsius);
@@ -36,6 +36,7 @@ let getWeatherForLocation = async (longitude, latitude) => {
     let windSpeed = setWindSpeed(data);
     let humidity = setHumidity(data);
     let pressure = setPressure(data);
+    let uvIndex = data.current.uvi;
     let sunriseTime = setSunrise(data);
     let sunsetTime = setSunset(data);
     let localTime = setLocalTime(data);
@@ -46,9 +47,11 @@ let getWeatherForLocation = async (longitude, latitude) => {
     document.getElementById('wind-speed').innerHTML = `${windSpeed.toString()} km/h`;
     document.getElementById('humidity').innerHTML = `${humidity.toString()}%`;
     document.getElementById('pressure').innerHTML = `${pressure.toString()} mb`;
+    document.getElementById('uv-index').innerHTML = `${uvIndex.toString()}`;
     document.getElementById('sunrise').innerHTML = `${sunriseTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;
     document.getElementById('sunset').innerHTML = `${sunsetTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;
-    document.getElementById('local-time').innerHTML = `${localTime.toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: true })}`;
+
+    setFiveDayForecast(data);
 }
 
 function setImageIcon(icon){
@@ -100,4 +103,41 @@ function subtractHours(date, hours){
 
     return date;
 }
+
+/* function setDayOfWeek(){
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+    var date = new Date(this.valueOf());
+    date = date.setDate(date.getDate() + 1);
+
+    for(let i = 1; i < 6; i++){
+        let currentDay = weekday[date.getDay()];
+
+        return currentDay;
+
+        currentDay = currentDay.setDate(currentDay.getDate() + 1);
+    }
+} */
+
+function setFiveDayForecast(data){
+    for(let i = 1; i < 6; i++) {
+        let icon = data.daily[i].weather[0].icon;
+        let temp = data.daily[i].temp.day - 273.15;
+        temp = Math.round(temp);
+
+        let wind = data.daily[i].wind_speed * 3.6;
+        wind = Math.round(wind);
+
+        //let dayOfWeek = setDayOfWeek();
+
+        let pressure = data.daily[i].pressure;
+
+        //document.getElementById(`day-${i}`).innerHTML = `${dayOfWeek}`;
+        document.getElementById(`icon-${i}`).src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+        document.getElementById(`temp-${i}`).innerHTML = `${temp}°C`;
+        document.getElementById(`wind-${i}`).innerHTML = `Wind: ${wind} km/h`;
+        document.getElementById(`press-${i}`).innerHTML = `Pressure: ${pressure} mb`;
+    }
+}
+
 document.querySelector('#submitLocation').addEventListener('click', getCoordinatesForCity);
