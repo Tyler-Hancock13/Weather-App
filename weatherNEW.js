@@ -1,7 +1,3 @@
-window.onload = function() {
-    document.getElementById("forecast").style.display = 'none';
-}
-
 let getCoordinatesForCity = async () => {
     let city = document.getElementById('location').value;
 
@@ -13,25 +9,26 @@ let getCoordinatesForCity = async () => {
     let longitude = data[0].lon;
     let latitude = data[0].lat;
 
-    let cityName = data[0].name;
-    document.getElementById('cityName').innerHTML = `${data[0].name.toString()}, ${data[0].country.toString()}`;
+    document.getElementById('cityName').innerHTML = `Current forecast for ${data[0].local_names.ca.toString()}, ${data[0].country.toString()}`;
 
     await getWeatherForLocation(longitude, latitude);
 };
 
 let getWeatherForLocation = async (longitude, latitude) => {
-    
-    document.getElementById("forecast").style.display = 'block';
 
     const request = await fetch(`https://api.openweathermap.org/data/3.0/onecall?lat=${latitude}&lon=${longitude}&appid=c55b5e9d4864e69d994e516d95e4ffb3`)
 
     let data = await request.json();
-    console.log(data);
+    console.log(data.current.feels_like);
 
     let tempCelsius = data.current.temp - 273.15;
     tempCelsius = Math.round(tempCelsius);
 
     let currentWeather = data.current.weather[0].main;
+
+    let feelsLike = data.current.feels_like - 273.15;
+    feelsLike = Math.round(feelsLike);
+
 
     let weatherIcon = data.current.weather[0].icon;
     setImageIcon(weatherIcon);
@@ -43,7 +40,9 @@ let getWeatherForLocation = async (longitude, latitude) => {
     let sunsetTime = setSunset(data);
     let localTime = setLocalTime(data);
 
+    document.getElementById('currentWeather').innerHTML = `${currentWeather.toString()}`
     document.getElementById('cityTemperature').innerHTML = `${tempCelsius.toString()}°C`;
+    document.getElementById('feels-like').innerHTML = `${feelsLike.toString()}°C`;
     document.getElementById('wind-speed').innerHTML = `${windSpeed.toString()} km/h`;
     document.getElementById('humidity').innerHTML = `${humidity.toString()}%`;
     document.getElementById('pressure').innerHTML = `${pressure.toString()} mb`;
