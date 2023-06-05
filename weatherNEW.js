@@ -9,7 +9,7 @@ let getCoordinatesForCity = async () => {
     let longitude = data[0].lon;
     let latitude = data[0].lat;
 
-    document.getElementById('cityName').innerHTML = `Current forecast for ${data[0].local_names.ca.toString()}, ${data[0].country.toString()}`;
+    document.getElementById('cityName').innerHTML = `Current forecast for ${data[0].name.toString()}, ${data[0].country.toString()}`;
 
     await getWeatherForLocation(longitude, latitude);
 };
@@ -104,20 +104,19 @@ function subtractHours(date, hours){
     return date;
 }
 
-/* function setDayOfWeek(){
+function setDayOfWeek(){
     const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
-    var date = new Date(this.valueOf());
-    date = date.setDate(date.getDate() + 1);
+    var date = new Date();
+    console.log(weekday[date.getDay()])
 
-    for(let i = 1; i < 6; i++){
-        let currentDay = weekday[date.getDay()];
+    for(let i = 1; i < 6; i++){ 
+        date.setDate(date.getDate() + 1);
+        var day = weekday[date.getDay()];
 
-        return currentDay;
-
-        currentDay = currentDay.setDate(currentDay.getDate() + 1);
+        document.getElementById(`day-${i}`).innerHTML = day;
     }
-} */
+}
 
 function setFiveDayForecast(data){
     for(let i = 1; i < 6; i++) {
@@ -128,11 +127,10 @@ function setFiveDayForecast(data){
         let wind = data.daily[i].wind_speed * 3.6;
         wind = Math.round(wind);
 
-        //let dayOfWeek = setDayOfWeek();
-
         let pressure = data.daily[i].pressure;
 
-        //document.getElementById(`day-${i}`).innerHTML = `${dayOfWeek}`;
+        setDayOfWeek();
+
         document.getElementById(`icon-${i}`).src = `http://openweathermap.org/img/wn/${icon}@2x.png`;
         document.getElementById(`temp-${i}`).innerHTML = `${temp}°C`;
         document.getElementById(`wind-${i}`).innerHTML = `Wind: ${wind} km/h`;
